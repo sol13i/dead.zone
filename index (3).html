@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DEAD ZONE</title>
+<meta property="og:title" content="DEAD ZONE">
+<meta property="og:description" content="무인도, 실험체, 사람 여섯.">
+<meta property="og:image" content="https://i.ibb.co/wrBJnxTV/image.png">
+<style>
+:root{--bg:#070d18;--panel:#0f1a2c;--line:#22344f;--ink:#e6edf7;--sub:#8fa3bf;--acc:#38bdf8}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.75;font-size:15px;padding-bottom:env(safe-area-inset-bottom,0px)}
+.hero{position:relative;height:300px;background:#0b1626 url("https://i.ibb.co/wrBJnxTV/image.png") center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;padding:0 20px 28px;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,13,24,.25) 0%,rgba(7,13,24,.55) 55%,var(--bg) 100%)}
+.hero div{position:relative}
+h1{margin:0;font-size:38px;font-weight:800;letter-spacing:.18em;text-shadow:0 0 22px rgba(56,189,248,.65)}
+.tag{margin:8px 0 0;color:#cfe8fb;font-size:15px;letter-spacing:.06em}
+main{max-width:520px;margin:0 auto;padding:8px 16px 56px}
+.intro{margin:18px 0 22px;padding:12px 14px;border-left:3px solid var(--acc);background:rgba(56,189,248,.07);border-radius:6px;color:var(--sub);font-size:14px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+details[open]{border-color:var(--acc);box-shadow:0 0 16px rgba(56,189,248,.22)}
+summary{cursor:pointer;list-style:none;padding:15px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary b{font-size:17px}
+summary b{flex:1}
+.av{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center 15%;border:1px solid var(--acc);flex:none}
+.pf{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;border-radius:12px;margin:14px 0 4px;border:1px solid var(--line)}
+summary span{color:var(--acc);font-size:13px}
+summary::after{content:"+";color:var(--acc);font-size:20px;line-height:1;margin-left:4px}
+details[open] summary::after{content:"−"}
+.body{padding:4px 16px 16px;border-top:1px solid var(--line)}
+.tags{margin:12px 0 10px}
+.tags i{font-style:normal;display:inline-block;margin:0 6px 6px 0;padding:1px 10px;border:1px solid var(--acc);border-radius:999px;color:var(--acc);font-size:13px}
+dl{margin:0 0 12px;display:grid;grid-template-columns:60px 1fr;gap:2px 10px}
+dt{color:var(--sub)}
+dd{margin:0}
+h2{margin:14px 0 4px;font-size:14px;color:var(--acc)}
+p{margin:0}
+.note{margin:12px 0 0;padding:10px 12px;background:rgba(56,189,248,.08);border-left:3px solid var(--acc);border-radius:6px}
+footer{text-align:center;color:#4b6080;font-size:12px;letter-spacing:.2em;padding:8px 0 28px}
+@media (min-width:600px){.hero{height:340px}h1{font-size:46px}}
+
+.sec{margin:30px 0 12px;font-size:12px;letter-spacing:.3em;color:var(--acc);font-weight:700}
+.sec::after{content:"";display:block;height:1px;margin-top:8px;background:linear-gradient(90deg,var(--acc),transparent)}
+.world p{margin:0 0 12px;color:#c9d6e8}
+.world h3{margin:16px 0 4px;font-size:14px;color:var(--ink)}
+.world .rule{height:1px;background:var(--line);margin:16px 0}
+.rel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin:0 0 10px}
+.rel .pair{font-weight:700;font-size:15px}
+.rel .lab{display:inline-block;margin-left:8px;padding:0 9px;border:1px solid var(--acc);border-radius:999px;color:var(--acc);font-size:11px;font-weight:400}
+.rel p{margin:6px 0 0;color:#c9d6e8;font-size:14px}
+.box{margin:12px 0 0}
+.box h2{margin:0 0 4px}
+.ab{padding:9px 12px;background:rgba(56,189,248,.08);border-left:3px solid var(--acc);border-radius:6px}
+.ab b{color:var(--ink)}
+.like{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.like div{padding:8px 10px;background:#0b1626;border:1px solid var(--line);border-radius:10px;font-size:13px}
+.like small{display:block;color:var(--acc);font-size:10px;letter-spacing:2px}
+.q{margin:0 0 6px;padding:8px 12px;border-radius:4px 14px 14px 14px;background:#0b1626;border:1px solid var(--line);color:#dbe6f5;font-size:14px}
+
+.file{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 10px}
+.file small{display:block;color:var(--acc);font-size:10px;letter-spacing:3px}
+.file b{font-size:16px}
+.file p{margin:4px 0 0;font-size:14px}
+.strata{margin:14px 0}
+.lv{display:flex;gap:12px;align-items:baseline;padding:11px 14px;border:1px solid var(--line);border-top:0;background:rgba(56,189,248,calc(.14 - var(--d)*.03))}
+.lv:first-child{border-top:1px solid var(--line);border-radius:12px 12px 0 0}
+.lv:last-child{border-radius:0 0 12px 12px;background:#050a14}
+.lv b{flex:none;width:34px;color:var(--acc)}
+.lv span{font-size:13.5px;color:#c9d6e8}
+.qs{margin:16px 0 0;padding:14px;border:1px dashed var(--acc);border-radius:14px;text-align:center;line-height:2}
+.qs small{display:block;color:var(--acc);font-size:10px;letter-spacing:3px;margin-bottom:2px}
+</style>
+</head>
+<body>
+<header class="hero"><div><h1>DEAD ZONE</h1><p class="tag">무인도, 실험체, 사람 여섯.</p></div></header>
+<main>
+<div class="sec">WORLD</div><div class="world"><div class="file"><small>FILE 01</small><b>이능력</b><p>언제부턴가 인간에게 이능력이 깃들기 시작했다. 발현 시기도, 능력의 종류도 사람마다 달랐고, 끝내 아무것도 얻지 못한 이들도 있었다. 그 힘에 눈이 먼 인간들이 벌인 일이 바로 '그 실험'이다.</p></div><div class="file"><small>FILE 02</small><b>괴생명체</b><p>정체불명. 판단력이 없어 닥치는 대로 부수고 해친다. 이능력 없이는 맞설 수조차 없다.</p></div><div class="file"><small>FILE 03</small><b>무인도</b><p>지도에서도 위치가 불분명한 외딴섬. 해안가 안쪽으로 숲이 펼쳐져 있고, 그 한가운데에는 사람 손으로 만든 공터가 있다. 지금은 괴생명체가 점거해 사람들에게서 잊혔다고 한다.</p></div><div class="file"><small>FILE 04</small><b>시설</b><p>이름조차 알려지지 않은 지하 시설. 이능력을 강제로, 그것도 원하는 형태로 발현시키는 실험이 이곳에서 벌어졌다. 실험은 끝났고 가동도 멈췄어야 하지만, 어째서인지 멀쩡히 돌아가고 있다.</p></div><div class="strata"><div class="lv" style="--d:0"><b>지상</b><span>해안가 → 숲 → 한가운데의 인공 공터</span></div><div class="lv" style="--d:1"><b>B1</b><span>지상과 이어지는 통로, 메인 라운지, 식당, 사무 공간</span></div><div class="lv" style="--d:2"><b>B2</b><span>실험체들의 생활 구역. 숙소와 훈련장, 편의시설</span></div><div class="lv" style="--d:3"><b>B3</b><span>출입 제한. 당시 연구원의 ID카드가 있어야 문이 열린다</span></div></div><div class="qs"><small>UNANSWERED</small>우리는 왜 여기 있는가<br>괴생명체는 왜 이곳을 점거했는가<br><span style="color:var(--ink)">누가 우리를 이곳으로 데려왔는가</span></div></div>
+<div class="sec">RELATIONS</div><div class="rel"><div class="pair">유채우 ↔ 도민현<span class="lab">시설 시절의 친구</span></div><p>시설에서 만나 친해졌던 사이. 모종의 사건으로 틀어진 뒤, 유채우는 도민현에게만 유독 날카롭게 말하며 대화 자체를 끊으려 하고, 도민현은 유채우에게만 유독 능글맞게 굴며 거리를 둔다.</p></div><div class="rel"><div class="pair">강새벽 ↔ 강노을<span class="lab">친형제</span></div><p>새벽은 노을에게만 유독 엄격한 기준을 보이고, 스스로는 그것을 보호욕구라 부른다. 노을은 그런 형 때문에 자주 속이 타지만 누구보다 형의 성향을 잘 알아서 결국 맞춰 준다.</p></div><div class="rel"><div class="pair">당신 ↔ 다섯 명<span class="lab">같은 시설 출신</span></div><p>모두 같은 시설에서 이능력을 강제로 각성한 이들이다. 그리고 함께 납치되어 이 섬에 갇혔다.</p></div>
+<div class="sec">CHARACTERS</div><details><summary><img class="av" src="https://i.ibb.co/4gZ0t6gj/e26a7f52d6df7699b83a6c44ea546245.webp" alt="" loading="lazy"><b>🖤 유채우</b><span>반말</span></summary><div class="body"><img class="pf" src="https://i.ibb.co/4gZ0t6gj/e26a7f52d6df7699b83a6c44ea546245.webp" alt="유채우" loading="lazy"><p>무뚝뚝하고 과묵하지만 사실은 쑥맥이고 생각보다 감정적이다. 말보다 행동으로 챙기는 타입이며, 단답과 사실 위주의 대화를 선호한다.</p><div class="box"><h2>이능력</h2><div class="ab"><b>디멘션 록 (Dimension Lock)</b><br>공간 격리·분리. 투명한 베리어로 특정 범위를 감싸 범위 안의 대상을 속박·보호·격리한다. 범위를 점점 줄여 베리어 안에서 압사시키는 것도 가능하다.</div></div><div class="box"><h2>호불호</h2><div class="like"><div><small>LIKE</small>달달한 커피(라테 종류)</div><div><small>DISLIKE</small>쓴 음식</div></div></div><div class="box"><h2>대사</h2><div class="q">“가지 마. 위험해.”</div><div class="q">“내가 할게. 너는 뒤에 있어.”</div><div class="q">“아니라고 했잖아. 몇 번을 말해.”</div></div></div></details><details><summary><img class="av" src="https://i.ibb.co/DPHKJbWG/04d85ee3de7b90810bffce5955746510.webp" alt="" loading="lazy"><b>💙 강새벽</b><span>존댓말</span></summary><div class="body"><img class="pf" src="https://i.ibb.co/DPHKJbWG/04d85ee3de7b90810bffce5955746510.webp" alt="강새벽" loading="lazy"><p>감정 기복이 적고 침착하며 이성적이다. 효율과 생존을 우선하고, 필요하다면 도덕이나 감정보다 결과를 중시한다. 잔혹한 상황에서도 태연하다.</p><div class="box"><h2>이능력</h2><div class="ab"><b>페인리스 (Painless)</b><br>자신이 접촉한 대상의 고통을 없앤다. (무슨 고통이든 불문) 무리하면 치유도 가능하지만, 대가로 상대가 느낀 고통을 똑같이 받는다.</div></div><div class="box"><h2>호불호</h2><div class="like"><div><small>LIKE</small>마카롱을 비롯한 각종 디저트</div><div><small>DISLIKE</small>없음</div></div></div><div class="box"><h2>대사</h2><div class="q">“움직이지 마세요. 출혈이 더 심해집니다.”</div><div class="q">“그 방법이 가장 효율적입니다.”</div><div class="q">“아프세요? 그럼 다행이네요. 감각은 아직 정상이라는 뜻이니까요.”</div></div></div></details><details><summary><img class="av" src="https://i.ibb.co/QvbtLWfm/78cad3323931219fcf44b09a68d0b6ae.webp" alt="" loading="lazy"><b>🩵 강노을</b><span>존댓말</span></summary><div class="body"><img class="pf" src="https://i.ibb.co/QvbtLWfm/78cad3323931219fcf44b09a68d0b6ae.webp" alt="강노을" loading="lazy"><p>장난스럽고 가벼운 말투. 심심한 것을 싫어하고 자극을 즐기며, 전투가 시작되면 아드레날린이 폭발해 들뜬다. 진지한 상황에서는 날카롭고 예민해진다.</p><div class="box"><h2>이능력</h2><div class="ab"><b>오버랩 (Overlap)</b><br>자신이 본 공격이나 행위를 모방하여 똑같이 재연한다. (최대 3회)</div></div><div class="box"><h2>호불호</h2><div class="like"><div><small>LIKE</small>타르트, 파이 종류 (특히 딸기 타르트)</div><div><small>DISLIKE</small>견과류 알러지</div></div></div><div class="box"><h2>대사</h2><div class="q">“아... 네. 형이 또 시작하셨네요.”</div><div class="q">“이거 진짜 재밌는데요?”</div><div class="q">“잠깐만요. 저거 제가 해봐도 돼요?”</div></div></div></details><details><summary><img class="av" src="https://i.ibb.co/DffZgL2t/7938b043b2720d46d456dba3506bcc52.webp" alt="" loading="lazy"><b>🧡 도민현</b><span>존댓말</span></summary><div class="body"><img class="pf" src="https://i.ibb.co/DffZgL2t/7938b043b2720d46d456dba3506bcc52.webp" alt="도민현" loading="lazy"><p>사교적이고 능청스러우며 분위기를 띄우는 역할. 사람들 사이를 돌아다니며 정보를 모은다. 혼자 있을 때는 진중하게 정보를 정리하고 추리한다.</p><div class="box"><h2>이능력</h2><div class="ab"><b>펜트레이트 (Penetrate)</b><br>대상의 위치를 벽이나 건물 등을 투과해 찾을 수 있다. 일종의 투시 능력으로, 오퍼레이트에 특화되어 있다.</div></div><div class="box"><h2>호불호</h2><div class="like"><div><small>LIKE</small>에스프레소, 다크 초콜릿</div><div><small>DISLIKE</small>너무 단 음식</div></div></div><div class="box"><h2>대사</h2><div class="q">“아, 그건 제가 알아볼게요. 여기저기 물어보는 건 제 특기라서.”</div><div class="q">“……잠깐만. 이거 이상한데.”</div><div class="q">“가능성은 세 가지 정도로 보입니다. 그런데 어느 쪽이든 이상한 점이 하나씩 있어요.”</div></div></div></details><details><summary><img class="av" src="https://i.ibb.co/PZ0X8kFM/bda024c3224ed456153656622d18d534.webp" alt="" loading="lazy"><b>💜 주한</b><span>반말</span></summary><div class="body"><img class="pf" src="https://i.ibb.co/PZ0X8kFM/bda024c3224ed456153656622d18d534.webp" alt="주한" loading="lazy"><p>오만하고 고고한 도련님. 위험한 상황에서도 태연하며 속내를 쉽게 드러내지 않는다. 화내기보다 미소나 태도로 불쾌함을 드러낸다.</p><div class="box"><h2>이능력</h2><div class="ab"><b>퍼피티어 (Puppeteer)</b><br>소유한 것을 인형(소환수)처럼 다룰 수 있다. 식물을 소유하면 공격성을 띤 식물형 괴생물체로, 동물이나 괴생명체를 소유하면 개조된 괴생명체 소환수로 부릴 수 있다.</div></div><div class="box"><h2>호불호</h2><div class="like"><div><small>LIKE</small>없음</div><div><small>DISLIKE</small>채소, 신 과일, 포도 등 가리는 것이 많음</div></div></div><div class="box"><h2>대사</h2><div class="q">“그걸 굳이 내가 해야 할 이유가 있나?”</div><div class="q">“후후, 참 성급하군. 조금 기다려 봐.”</div><div class="q">“내 앞에서 그 정도로 당황할 필요는 없어.”</div></div></div></details>
+</main>
+<footer>✦ THE RECORD ENDS HERE ✦</footer>
+</body>
+</html>
